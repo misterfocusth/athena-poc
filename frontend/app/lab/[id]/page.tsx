@@ -37,7 +37,7 @@ const LabPage = ({ params }: { params: { id: string } }) => {
         </div>
       </nav>
       <iframe
-        src={`http://localhost:${notebook.HostConfig.PortBindings["8888/tcp"][0].HostPort}`}
+        src={`http://${process.env.NEXT_PUBLIC_HOST_IP}:${notebook.HostConfig.PortBindings["8888/tcp"][0].HostPort}`}
         className="w-full h-[95vh]"
       />
     </div>

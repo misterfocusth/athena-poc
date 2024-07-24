@@ -13,7 +13,12 @@ app.use(express.json());
 app.use(cors());
 
 // Docker
-const docker = new Dockerode();
+// const docker = new Dockerode({
+//   host: process.env.HOST_IP || "localhost",
+//   // port: 2375,
+// });
+
+var docker = new Dockerode({ socketPath: "/var/run/docker.sock" });
 
 const containerIds: string[] = [];
 
